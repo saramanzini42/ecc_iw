@@ -1098,7 +1098,7 @@ def model_gw(psrs, upper_limit=False, J1713_nonstat=False, J1713_expdip=False, p
 
     # gwb
     if nonstat:
-        s0 += nonstat_blocks.common_time_correlated_block_t(psd=crn_psd+'_cos_t', name=crn_name, prior=amp_prior, Tspan=crn_Tspan, components=crn_components, orf=orf, order=order, par_0_val=par_0, par_1_val=par_1, idx=0, logf=logf, spline=spline, sample_knot_t=sample_knot_t)
+        s0 += nonstat_blocks.common_time_correlated_block_t(psd=crn_psd+'_t', name=crn_name, prior=amp_prior, Tspan=crn_Tspan, components=crn_components, orf=orf, order=order, par_0_val=par_0, par_1_val=par_1, idx=0, logf=logf, spline=spline, sample_knot_t=sample_knot_t)
     else:
         s0 += blocks.common_red_noise_block(psd=crn_psd, prior='log-uniform', Tspan=crn_Tspan, components=crn_components, orf=orf, name=crn_name)
 
